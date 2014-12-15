@@ -5,6 +5,7 @@ var express		= require('express'),
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(__dirname));
 
 //////////////////////////////Database/////////////////////////
 mongoose.connect('mongodb://localhost/seasons-app');
@@ -17,13 +18,14 @@ var clothingController = require('./server/clothing/controller/clothings-control
 /////////////////////////Routing///////////////////////////////
 var router		= express.Router();
 
+// api routes
 router.route('/clothing')
 
 	// READ //
 	.get(clothingController.getClothing)
 
 	// CREATE //
-	.post(clothingController.postClothing)
+	.post(clothingController.postClothing);
 
 router.route('/clothing/:id')
 
@@ -33,8 +35,13 @@ router.route('/clothing/:id')
 	// DELETE //
 
 
-app.use('/v1/api', router);
+// client routes
+router.route('/')
+	.get(function(req,res){
+		res.sendFile('/index.html'); //angular route for SPA
+	});
 
+app.use('/v1/api', router);
 ///////////////////////////////////////////////////////////////
 
 
