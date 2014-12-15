@@ -28,10 +28,10 @@ router.route('/clothing')
 router.route('/clothing/:id')
 
 	// UPDATE //
-	.put(clothingController.updateClothing);
+	.put(clothingController.updateClothing)
 
 	// DELETE //
-
+	.delete(clothingController.deleteClothing);
 
 app.use('/v1/api', router);
 
