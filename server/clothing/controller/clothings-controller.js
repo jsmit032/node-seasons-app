@@ -37,10 +37,20 @@ function updateClothing (request, response) {
 
 }
 
+function deleteClothing (request, response) {
+
+	Clothing.remove({ _id: request.params.id }, 
+		function(error, data){
+			if (error) console.log(error);
+		});
+
+};
+
 module.exports = {
 
 	getClothing: getClothing,
 	postClothing: postClothing,
-	updateClothing: updateClothing
+	updateClothing: updateClothing,
+	deleteClothing: deleteClothing
 
 }

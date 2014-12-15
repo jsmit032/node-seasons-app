@@ -30,10 +30,10 @@ router.route('/clothing')
 router.route('/clothing/:id')
 
 	// UPDATE //
-	.put(clothingController.updateClothing);
+	.put(clothingController.updateClothing)
 
 	// DELETE //
-
+	.delete(clothingController.deleteClothing);
 
 // client routes
 router.route('/')
