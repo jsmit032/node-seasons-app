@@ -21,9 +21,26 @@ function postClothing (request, response) {
 
 }
 
+// GOT 204 ERROR 'NO CONTENT' after update
+function updateClothing (request, response) {
+
+	Clothing.findById(request.params.id,
+		function(error, clothing){
+			if (error) console.log(error);
+			clothing.name = request.body.name;
+
+			clothing.save(function(error){
+				response.status(204).json();
+			})
+		}
+	);
+
+}
+
 module.exports = {
 
 	getClothing: getClothing,
-	postClothing: postClothing
+	postClothing: postClothing,
+	updateClothing: updateClothing
 
 }

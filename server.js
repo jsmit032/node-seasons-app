@@ -23,7 +23,14 @@ router.route('/clothing')
 	.get(clothingController.getClothing)
 
 	// CREATE //
-	.post(clothingController.postClothing);
+	.post(clothingController.postClothing)
+
+router.route('/clothing/:id')
+
+	// UPDATE //
+	.put(clothingController.updateClothing);
+
+	// DELETE //
 
 
 app.use('/v1/api', router);
