@@ -9,12 +9,24 @@ app.use(bodyParser.json());
 //////////////////////////////Database/////////////////////////
 mongoose.connect('mongodb://localhost/seasons-app');
 
+var Clothing = require('./server/clothing/models/clothing.js');
+var clothingController = require('./server/clothing/controller/clothings-controller.js');
 ///////////////////////////////////////////////////////////////
 
 
 /////////////////////////Routing///////////////////////////////
-
 var router		= express.Router();
+
+router.route('/clothing')
+
+	// READ //
+	.get(clothingController.getClothing)
+
+	// CREATE //
+	.post(clothingController.postClothing);
+
+
+app.use('/v1/api', router);
 
 ///////////////////////////////////////////////////////////////
 
