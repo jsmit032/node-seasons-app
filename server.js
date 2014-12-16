@@ -1,51 +1,17 @@
 var express		= require('express'),
 	app			= express(),
 	bodyParser	= require('body-parser'),
-	mongoose	= require('mongoose');
+	mongoose	= require('mongoose'),
+	path = require('path'),
+	database = require('./config/database');
 
+mongoose.connect(database.url);
+
+app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/client'));
 
-
-//////////////////////////////Database/////////////////////////
-mongoose.connect('mongodb://localhost/seasons-app');
-
-var Clothing = require('./server/clothing/models/clothing.js');
-var clothingController = require('./server/clothing/controller/clothings-controller.js');
-///////////////////////////////////////////////////////////////
-
-
-/////////////////////////Routing///////////////////////////////
-var router		= express.Router();
-
-// api routes
-router.route('/clothing')
-
-	// READ //
-	.get(clothingController.getClothing)
-
-	// CREATE //
-	.post(clothingController.postClothing);
-
-router.route('/clothing/:id')
-
-	// UPDATE //
-	.put(clothingController.updateClothing)
-
-	// DELETE //
-	.delete(clothingController.deleteClothing);
-
-// client routes
-router.route('*')
-	.get(function(req,res){
-		res.sendFile(__dirname + '/client/views/index.html'); //angular route for SPA
-	});
-
-app.use('/v1/api', router);
-app.use('/', router);
-
-///////////////////////////////////////////////////////////////
+require('./server/routes.js')(app);
 
 
 // the port will be whatever we set it to or default to 3000;
