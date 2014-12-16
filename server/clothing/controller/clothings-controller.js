@@ -30,7 +30,7 @@ function updateClothing (request, response) {
 			clothing.name = request.body.name;
 
 			clothing.save(function(error){
-				response.status(204).json();
+				response.status(202).json({ message: 'clothing successfully updated!' });
 			})
 		}
 	);
@@ -42,6 +42,7 @@ function deleteClothing (request, response) {
 	Clothing.remove({ _id: request.params.id }, 
 		function(error, data){
 			if (error) console.log(error);
+			response.status(202).json({ message: 'clothing successfully deleted!' });
 		});
 
 };
