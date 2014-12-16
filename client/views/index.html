@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/application.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src="javascripts/app.js"></script>
 </head>
 <body>
@@ -17,10 +18,9 @@
       <li><a href="/">Home</a></li>
       <li><a href="#">Sign Up</a></li>
       <li><a href="#">Log In</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="#">About</a></li>
     </ul>
   </nav>
-
 
   <div class="container-fluid"> 
 
@@ -37,10 +37,10 @@
         </nav>
       </div>
 
-      <div id="conditions">
-        <h1>today's weather <span id="italic">is</span><br><span>77</span> &amp; <span>mostly cloudy</span><br><span id="italic">in</span> santa monica</h1>
-        <!-- <h1>today's weather <span id="italic">is</span><br><span>{{place.temp}}</span> &amp; <span>{{place.condition}}</span><br><span id="italic">in</span> {{place.city}}</h1> -->
-      </div> 
+    <div id="conditions">
+      <h1>today's weather <br><span>77</span> &amp; <span>mostly cloudy</span><br> santa monica</h1>
+      <!-- <h1>today's weather <span id="italic">is</span><br><span>{{place.temp}}</span> &amp; <span>{{place.condition}}</span><br><span id="italic">in</span> {{place.city}}</h1> -->
+    </div> 
 
       <div id="apparel-tab" class="bounce">
         <p>suggested apparel</p>
@@ -48,29 +48,40 @@
     </div>
   </div> 
 
-  <div class="col-xs-12 col-sm-12 col-md-12">
-    <div id="apparel">
-      <div id="clothing-col">
-        <h3>Day</h3>
-        <ul>
-          <li>cardigan</li>
-          <li>parka</li>
-          <li>boots</li>
-        </ul>
+<div class="col-xs-12 col-sm-12 col-md-12">
+
+      <div id="apparel">
+
+        <p>partly cloudy skies this morning will give way to cloudy skies and rain during the afternoon. Areas of patchy fog. High near 60F. Winds SSE at 15 to 25 mph. Chance of rain 100%. Rainfall near a quarter of an inch.</p>
+        <!-- <p>{{place.forecasttxt}}</p> -->
+
+        <div class="row" id="inner-article">
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <h3>Day</h3>
+         
+            <p>cardigan</p>
+            <p>parka</p>
+            <p>boots</p>
+          
+
+
 <!--           <section ng-repeat="oneArticle in weather track by $index">
-          <h3>{{oneArticle.clothing_type}}</h3>
-        </section> -->
-      </div>
-      
-      <div id="clothing-col">
-        <h3>Night</h3>
-        <ul>
-          <li>umbrella</li>
-          <li>beanie</li>
-        </ul>
+            <h3>{{oneArticle.clothing_type}}</h3>
+          </section> -->
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <h3>Night</h3>
+         
+            <p>umbrella</p>
+            <p>beanie</p>
+          
+        </div>
+
       </div>
     </div>
-    </div>
+  </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12" id="footer">
       <div id="footer-content">
