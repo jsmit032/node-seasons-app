@@ -13,6 +13,7 @@ module.exports = function(app) {
 
     app.get('*', function(request, response) {
         response.sendfile('./client/views/index.html');
+        // response.sendFile('index.html', { root: path.join(__dirname, '../client/views/') });
     });
 };
 

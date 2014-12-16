@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     nodemon: {
       dev: {
-        script: 'cluster.js'
+        script: 'server.js'
       }
     },
     sass: {

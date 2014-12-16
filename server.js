@@ -2,7 +2,7 @@ var express		= require('express'),
 	app			= express(),
 	bodyParser	= require('body-parser'),
 	mongoose	= require('mongoose'),
-	path = require('path'),
+	// path = require('path'),
 	database = require('./config/database');
 
 mongoose.connect(database.url);
