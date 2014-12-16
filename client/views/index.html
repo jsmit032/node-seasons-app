@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="SeasonsApp">
+<!-- <html ng-app="SeasonsApp" ng-controller="HomeController"> -->
 <head>
   <title>seasons</title>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
@@ -10,14 +11,14 @@
 </head>
 <body>
 
-    <nav id="bt-menu" class="bt-menu">
-        <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
+  <nav id="bt-menu" class="bt-menu">
+    <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
   </nav>
 
 
@@ -28,56 +29,47 @@
 
     <!-- weather & search bar -->
       <div class="col-xs-11 col-sm-11 col-md-11" id="weather">
-        
-       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <form>
-          <input type="submit" value="Search" ng-click="findWeather(coordinates)">
-          <input type="text" placeholder="where to?" ng-model="coordinates">
-        </form>
-      </nav>
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <form>
+            <input type="submit" value="Search" ng-click="findWeather(coordinates)">
+            <input type="text" placeholder="where to?" ng-model="coordinates">
+          </form>
+        </nav>
       </div>
 
       <div id="conditions">
         <h1>today's weather <span id="italic">is</span><br><span>77</span> &amp; <span>mostly cloudy</span><br><span id="italic">in</span> santa monica</h1>
-        <!-- <p>HI: 79 // LOW: 33<br>wind: 5 mph<br>rain: 73%<br>snow: 0"</p> -->
+        <!-- <h1>today's weather <span id="italic">is</span><br><span>{{place.temp}}</span> &amp; <span>{{place.condition}}</span><br><span id="italic">in</span> {{place.city}}</h1> -->
       </div> 
 
-        <div id="apparel-tab" class="bounce">
-          <p>suggested apparel</p>
-        </div>
+      <div id="apparel-tab" class="bounce">
+        <p>suggested apparel</p>
+      </div>
     </div>
-        
-  <!--       <h1>It's currently<br><span>{{place.temp}} &amp; {{place.condition}}</span><br>in {{place.city}}</h1>
+  </div> 
 
-        <div id="conditions">
-          <p>HI: {{place.temphi}} // LOW: {{place.templo}}<br>wind: {{place.wind}} <br>rain: {{place.rain}}%<br>snow: {{place.snow}}"</p>
-        </div>  -->
-
-        </div> 
-
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div id="apparel">
-          <div id="clothing-col">
-            <h3>Day</h3>
-            <ul>
-              <li>cardigan</li>
-              <li>parka</li>
-              <li>boots</li>
-            </ul>
-
-
-  <!--           <section ng-repeat="oneArticle in weather track by $index">
-              <h3>{{oneArticle.clothing_type}}</h3>
-            </section> -->
-          </div>
-          <div id="clothing-col">
-            <h3>Night</h3>
-            <ul>
-              <li>umbrella</li>
-              <li>beanie</li>
-            </ul>
-          </div>
-        </div>
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div id="apparel">
+      <div id="clothing-col">
+        <h3>Day</h3>
+        <ul>
+          <li>cardigan</li>
+          <li>parka</li>
+          <li>boots</li>
+        </ul>
+<!--           <section ng-repeat="oneArticle in weather track by $index">
+          <h3>{{oneArticle.clothing_type}}</h3>
+        </section> -->
+      </div>
+      
+      <div id="clothing-col">
+        <h3>Night</h3>
+        <ul>
+          <li>umbrella</li>
+          <li>beanie</li>
+        </ul>
+      </div>
+    </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12" id="footer">
