@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.put('v1/api/clothing/:id', clothingController.updateClothing)
 
     app.delete('v1/api/clothing/:id', clothingController.deleteClothing);
-
+    
     app.get('*', function(request, response) {
         response.sendfile('./client/views/index.html');
         // response.sendFile('index.html', { root: path.join(__dirname, '../client/views/') });
