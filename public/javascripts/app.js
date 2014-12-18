@@ -9,6 +9,11 @@ angular.module('SeasonsApp', ['ui.router'])
       url: '/',
       templateUrl: 'views/home.html',
       controller: 'HomeController'
+    })
+
+    .state('about', {
+      url: '/about',
+      templateUrl: 'views/about.html'
     });
 
 }])
