@@ -9,6 +9,7 @@
     "express": "^4.10.5",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^3.8.20",
+    "node-fs": "^0.1.7",
     "node-mongo-seeds": "^2.1.0",
     "path": "^0.4.9",
     "url": "^0.10.1",

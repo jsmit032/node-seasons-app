@@ -1,5 +1,17 @@
 [
 	{
 		"name": "boots"
+	},
+
+	{
+		"name": "tshirt"
+	},
+
+	{
+		"name": "jeans"
+	},
+
+	{
+		"name": "raincoat"
 	}
 ]

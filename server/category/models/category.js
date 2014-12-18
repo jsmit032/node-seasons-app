@@ -3,7 +3,11 @@ var mongoose = require('mongoose'),
 
 var CategorySchema = new Schema({
 
-	name: String
+	name: String,
+	clothing: {
+		type: Schema.ObjectId,
+		ref: 'clothings'
+	}
 
 });
 

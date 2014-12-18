@@ -3,8 +3,11 @@ var mongoose = require('mongoose'),
 
 var ClothingSchema = new Schema({
 
-	name: String
-
+	name: String,
+	category: {
+		type: Schema.ObjectId,
+		ref: 'categories'
+	}
 });
 
 module.exports = mongoose.model('Clothing', ClothingSchema);

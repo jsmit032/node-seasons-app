@@ -1,11 +1,18 @@
-var Clothing = require('../models/clothing.js');
+var Clothing = require('../models/clothing.js'),
+	mongoose = require('mongoose');
 
 function getClothing (request, response) {
 
-	Clothing.find(function(error, data){
+	Clothing.find(function(error, clothing){
 		if (error) console.log(error);
-		response.status(200).json(data);
-	})
+		response.status(200).json(clothing);
+	});
+}
+
+function showClothing (request, response) {
+
+	Clothing.findById({category: request.params.clothingId})
+
 }
 
 function postClothing (request, response) {

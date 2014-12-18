@@ -1,18 +1,23 @@
-var express   			= require('express'),
-  	app     			= express(),
-  	port 				= process.env.PORT || 3000,
-  	bodyParser  		= require('body-parser'),
-  	mongoose  			= require('mongoose'),
-  	mongodbUri 			= require('mongodb-uri'),
-  	database 			= require('./config/database'),
+var express   			  = require('express'),
+  	app     			    = express(),
+  	port 				      = process.env.PORT || 3000,
+  	bodyParser  		  = require('body-parser'),
+  	mongoose  			  = require('mongoose'),
+  	mongodbUri 			  = require('mongodb-uri'),
+    fs                = require('node-fs'),
+  	developmentdb 		= require('./config/developmentdb'),
   	WunderNodeClient 	= require('wundernode'),
-  	URL 				= require('url');
+  	URL 				      = require('url');
 
-var uri = 'mongodb://heroku_app32583861:f02opcjc007nor4rg1c1otts07@ds027751.mongolab.com:27751/heroku_app32583861';
+// development only
+if ('development' == app.get('env')) {
+  mongoose.connect(developmentdb.url);
+} else if ('production' == app.get('env')) {
+  var uri = 'mongodb://heroku_app32583861:f02opcjc007nor4rg1c1otts07@ds027751.mongolab.com:27751/heroku_app32583861';
 
-var mongooseConnectString = mongodbUri.formatMongoose(uri);
-mongoose.connect(mongooseConnectString);
-// mongoose.connect(database.url);
+  var mongooseConnectString = mongodbUri.formatMongoose(uri);
+  mongoose.connect(mongooseConnectString);
+}
 
 // Test for connection success
 var db = mongoose.connection;
