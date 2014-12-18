@@ -1,4 +1,17 @@
-angular.module('SeasonsApp', [])
+angular.module('SeasonsApp', ['ui.router'])
+
+.config(function($stateProvider, $urlRouterProvider){
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: '/home.html',
+      controller: 'HomeController'
+    });
+
+})
 
 .controller('HomeController', ['$scope', 'weatherService', function($scope, weatherService) {
 
@@ -132,47 +145,47 @@ angular.module('SeasonsApp', [])
 }]);
 
 
-// .factory('weatherService', ['$http', '$q', function($http, $q) {
-//   function getWeather(coordinates) {
-//     var deferred = $q.defer();
-//     $http.get('/receivezip?zip='+coordinates)
+// // .factory('weatherService', ['$http', '$q', function($http, $q) {
+// //   function getWeather(coordinates) {
+// //     var deferred = $q.defer();
+// //     $http.get('/receivezip?zip='+coordinates)
 
-//       .success(function(data) {
-//         deferred.resolve(data);
-//         console.log(data);
-//       })
-//       .error(function(err) {
-//         console.log('Error retrieving data');
-//         deferred.reject(err);
-//       });
-//     return deferred.promise;
-//   }
+// //       .success(function(data) {
+// //         deferred.resolve(data);
+// //         console.log(data);
+// //       })
+// //       .error(function(err) {
+// //         console.log('Error retrieving data');
+// //         deferred.reject(err);
+// //       });
+// //     return deferred.promise;
+// //   }
 
-//   function getClothing(condition, bkcondition) {
-//     var deferredClothing = $q.defer();
+// //   function getClothing(condition, bkcondition) {
+// //     var deferredClothing = $q.defer();
 
-//     // check for multiple params and count the number of params?
-//     // create the get url based on the # of params
-//     // create url that accepts condition and bkcondition
-//     // 
+// //     // check for multiple params and count the number of params?
+// //     // create the get url based on the # of params
+// //     // create url that accepts condition and bkcondition
+// //     // 
     
-//     $http.get('/getclothing?category1=' + condition + '&category2=' + bkcondition)
-//       .success(function(dataClothing) {
-//         deferredClothing.resolve(dataClothing);
-//         console.log(dataClothing);
-//       })
-//       .error(function(err) {
-//         console.log('Error retrieving data');
-//         deferredClothing.reject(err);
-//       });
+// //     $http.get('/getclothing?category1=' + condition + '&category2=' + bkcondition)
+// //       .success(function(dataClothing) {
+// //         deferredClothing.resolve(dataClothing);
+// //         console.log(dataClothing);
+// //       })
+// //       .error(function(err) {
+// //         console.log('Error retrieving data');
+// //         deferredClothing.reject(err);
+// //       });
 
 
-//     return deferredClothing.promise;
-//   }
+// //     return deferredClothing.promise;
+// //   }
 
-//   return {
-//     getWeather: getWeather,
-//     getClothing: getClothing
-//   };
+// //   return {
+// //     getWeather: getWeather,
+// //     getClothing: getClothing
+// //   };
   
-// }]);
+// // }]);
