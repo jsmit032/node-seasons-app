@@ -23,34 +23,6 @@ module.exports = function(app) {
     app.delete('/v1/api/category/:id', categoryController.deleteCategory);
     
     app.get('*', function(request, response) {
-        response.sendfile('./client/views/index.html');
-        // response.sendFile('index.html', { root: path.join(__dirname, '../client/views/') });
+        response.render('index');
     });
 };
-
-  // api routes
-//   router.route('/clothing')
-
-//     // READ //
-//     .get(clothingController.getClothing)
-
-//     // CREATE //
-//     .post(clothingController.postClothing);
-
-//   router.route('/clothing/:id')
-
-//     // UPDATE //
-//     .put(clothingController.updateClothing)
-
-//     // DELETE //
-//     .delete(clothingController.deleteClothing);
-
-//   // client routes
-//   router.route('*')
-//     .get(function(req,res){
-//       res.sendFile(__dirname + './client/views/index.html'); //angular route for SPA
-//     });
-
-//   app.use('/v1/api', router);
-//   app.use('/', router);
-// };

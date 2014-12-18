@@ -9,6 +9,7 @@ html, .container-fluid {
 .hero-banner {
   padding: 20% 0;
   position: relative;
+  // z-index:-1;
 }
 
 #conditions {
@@ -385,7 +386,7 @@ body {
 }
 
 
-
+///////////////////////// SEARCH BAR /////////////////////////
 
 .navbar {
   background: rgba(210, 77, 78, 0);
@@ -395,7 +396,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 
 #wrap {
   margin: 50px 0px;
@@ -458,4 +458,113 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   opacity: 0.8;
+}
+
+
+///////////////////////// ABOUT PAGE /////////////////////////
+
+
+/* uses font awesome for social icons */
+
+
+.page-header{
+  text-align: center;    
+}
+
+.jen {
+  background-image: url('jen.jpg');
+  background-color: #CCC;
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+}
+
+
+/*social buttons*/
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+    opacity:1;
+}
+.btn-facebook {
+background-color: #3b5998;
+opacity:0.9;
+}
+.btn-twitter {
+background-color: #00aced;
+opacity:0.9;
+}
+.btn-linkedin {
+background-color:#0e76a8;
+opacity:0.9;
+}
+.btn-github{
+  background-color:#000000;
+  opacity:0.9;
+}
+.btn-google {
+  background-color: #c32f10;
+  opacity: 0.9;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
+  opacity: 0.9;
+}
+
+/* resume stuff */
+
+.bs-callout {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eee;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+.bs-callout:last-child {
+    margin-bottom: 0px;
+}
+.bs-callout h4 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+
+.bs-callout-danger h4{
+    color: #d9534f;
+}
+
+.resume .list-group-item:first-child, .resume .list-group-item:last-child{
+  border-radius:0;
+}
+
+/*makes an anchor inactive(not clickable)*/
+.inactive-link {
+   pointer-events: none;
+   cursor: default;
+}
+
+.resume-heading .social-btns{
+  margin-top:15px;
+}
+.resume-heading .social-btns i.fa{
+  margin-left:-5px;
+}
+
+@media (max-width: 992px) {
+  .resume-heading .social-btn-holder{
+    padding:5px;
+  }
 }
