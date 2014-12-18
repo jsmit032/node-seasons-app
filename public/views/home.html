@@ -1,29 +1,31 @@
-  <div class="container-fluid"> 
 
-    <div class="hero-banner" id="cloudy">
-    <!-- <div class="hero-banner" id="{{place.bckgrdCondition}}"> -->
+<div class="container-fluid" > 
 
-    <!-- weather & search bar -->
-      <div class="col-xs-11 col-sm-11 col-md-11" id="weather">
-         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <form>
-            <input type="submit" value="Search" ng-click="findWeather(coordinates)">
-            <input type="text" placeholder="where to?" ng-model="coordinates">
-          </form>
-        </nav>
-      </div>
+  <div class="hero-banner" id="cloudy">
+  <!-- <div class="hero-banner" id="{{place.bckgrdCondition}}"> -->
+
+  <!-- weather & search bar -->
+    <div class="col-xs-11 col-sm-11 col-md-11" id="weather">
+      
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <form>
+        <input type="submit" value="Search" ng-click="findWeather(coordinates)">
+        <input type="text" placeholder="where to?" ng-model="coordinates">
+      </form>
+    </nav>
+    </div>
 
     <div id="conditions">
-      <h1>today's weather is<br><span>77&deg;</span> &amp; <span>mostly cloudy</span><br>in santa monica</h1>
-      <!-- <h1>today's weather <span id="italic">is</span><br><span>{{place.temp}}</span> &amp; <span>{{place.condition}}</span><br><span id="italic">in</span> {{place.city}}</h1> -->
+      <h1>today's weather is<br><span>77</span> &amp; <span>mostly cloudy</span><br>in santa monica</h1>
+      <!-- <h1>today's weather is<br><span>{{place.temp}}</span> &amp; <span>{{place.condition}}</span><br>in {{place.city}}</h1> -->
     </div> 
 
       <div id="apparel-tab" class="bounce">
         <p>suggested apparel</p>
       </div>
-    </div>
+  </div>
 
-<div class="col-xs-12 col-sm-12 col-md-12">
+  <div class="col-xs-12 col-sm-12 col-md-12">
 
       <div id="apparel">
 
@@ -38,9 +40,12 @@
             <p>cardigan</p>
             <p>parka</p>
             <p>boots</p>
-<!--           <section ng-repeat="oneArticle in weather track by $index">
-            <h3>{{oneArticle.clothing_type}}</h3>
+          
+<!--           <section ng-repeat="oneArticle in dayweather track by $index">
+            <p>{{oneArticle.clothing_type}}</p>
           </section> -->
+
+
         </div>
 
         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -48,6 +53,10 @@
          
             <p>umbrella</p>
             <p>beanie</p>
+
+<!--           <section ng-repeat="oneArticle in nightweather track by $index">
+            <p>{{oneArticle.clothing_type}}</p>
+          </section> -->
           
         </div>
 
@@ -55,10 +64,12 @@
     </div>
   </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-12" id="footer">
-      <div id="footer-content">
-        <span><a href="https://github.com/jsmit032/seasons-app" class="fa fa-github-alt"></a></span>
-        <p>Credit: <a href="http://www.wunderground.com/weather/api">Weather Underground</a></p>
-      </div>
+  <div class="col-xs-12 col-sm-12 col-md-12" id="footer">
+    <div id="footer-content">
+      <span><a href="https://github.com/jsmit032/seasons-app" class="fa fa-github-alt"></a></span>
+      <p>Credit: <a href="http://www.wunderground.com/weather/api">Weather Underground</a></p>
     </div>
+  </div>
+
 </div>
+
