@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     nodemon: {
       dev: {
+        // script: './node_modules/wundernode/Example.js'
         script: 'server.js'
       }
     },
