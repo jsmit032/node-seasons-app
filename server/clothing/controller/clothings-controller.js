@@ -1,9 +1,16 @@
-var Clothing = require('../models/clothing.js'),
+var //Clothing = require('../models/clothing.js'),
+	Category = require('../../category/models/category.js'),
+	url = require('url'),
 	mongoose = require('mongoose');
 
 function getClothing (request, response) {
 
-	Clothing.find(function(error, clothing){
+	console.log('Query: ' + request.url);
+
+	queryData = url.parse(request.url,true).query;
+ 	
+ 	if(queryData.category)
+	Category.find({name: queryData.category },function(error, clothing){
 		if (error) console.log(error);
 		response.status(200).json(clothing);
 	});

@@ -1,12 +1,12 @@
 var mongoose = require('mongoose'),
+	Clothing = require('../../clothing/models/clothing.js'),
 	Schema = mongoose.Schema;
 
 var CategorySchema = new Schema({
 
 	name: String,
 	clothing: {
-    type: Array,
-		// type: Schema.ObjectId,
+		type: Schema.ObjectId,
 		ref: 'Clothing'
 	}
 
