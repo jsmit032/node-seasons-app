@@ -21,7 +21,7 @@ function getClothing (request, response) {
 // }
 
 function postClothing (request, response) {
-
+	console.log(request.body)
 	var clothing = new Clothing();
 
 	clothing.name = request.body.name;

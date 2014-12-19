@@ -10,12 +10,31 @@ module.exports = function(app) {
 
     app.get('/v1/api/clothing/:categoryId', function(request, response) {
 
-       mongoose.model(Clothing).find({ category: request.params.categoryId }, 
-       function(error, clothing) {
-        mongoose.model(Clothing).populate(Category, {path: 'Category'}, function (error, clothing){
-          response.send(clothing);
-        });
-       }); 
+    console.log(request.params.categoryId);
+    Category.findById(request.params.categoryId, '-_id clothing', function(error, category) {
+
+      // if query fails
+      if (error) console.log('could not find category b/c ', error);
+
+      // if query succeeds query Clothing model with category id
+      var clothingId = category.clothing[0].type
+
+      Clothing.findById(clothingId, function(error, data) {
+        if (error) console.log('could not find clothing b/c ', error);
+        // return clothing documents as json
+        console.log(data);
+        response.status(200).json(data);
+      });
+
+    });
+
+
+       // mongoose.model(Clothing).find({ category: request.params.categoryId }, 
+       // function(error, clothing) {
+       //  mongoose.model(Clothing).populate(Category, {path: 'Category'}, function (error, clothing){
+       //    response.send(clothing);
+       //  });
+       // }); 
 
     });
 
