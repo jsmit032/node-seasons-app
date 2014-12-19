@@ -6,7 +6,7 @@ var CategorySchema = new Schema({
 	name: String,
 	clothing: {
 		type: Schema.ObjectId,
-		ref: 'clothings'
+		ref: 'Clothing'
 	}
 
 });
