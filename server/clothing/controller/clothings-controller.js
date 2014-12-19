@@ -9,11 +9,16 @@ function getClothing (request, response) {
 	});
 }
 
-function showClothing (request, response) {
+// function showClothing (request, response) {
 
-	Clothing.findById({category: request.params.clothingId})
+// 	Clothing.findById({category: request.params.clothingId}, 
+// 		function(error, clothing){
+// 			Clothing.populate(clothing, {path: 'category'}, function (error, clothing) {
+// 				response.send(clothing);
+// 			});
+// 	});
 
-}
+// }
 
 function postClothing (request, response) {
 

@@ -1,6 +1,9 @@
 [
 	{
-		"name": "boots"
+		"name": "boots",
+		"category": {
+			"type": "54935764c2cf55bf66e1d055"
+		}
 	},
 
 	{

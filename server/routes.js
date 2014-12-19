@@ -7,6 +7,17 @@ module.exports = function(app) {
 	// Clothing routes
     app.get('/v1/api/clothing', clothingController.getClothing);
 
+    app.get('v1/api/clothing/:categoryId', function(request, response) {
+
+       mongoose.model(Clothing).find({ category: request.params.categoryId }, 
+       function(error, clothing) {
+        mongoose.model(Clothing).populate(categories, {path: 'category'}, function (error, clothing){
+          response.send(clothing);
+        });
+       }); 
+
+    });
+
     app.post('/v1/api/clothing', clothingController.postClothing);
 
     app.put('/v1/api/clothing/:id', clothingController.updateClothing);
