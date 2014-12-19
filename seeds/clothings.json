@@ -1,20 +1,45 @@
-[
-	{
-		"name": "boots",
-		"category": {
-			"type": "54935764c2cf55bf66e1d055"
-		}
-	},
-
-	{
-		"name": "tshirt"
-	},
-
-	{
-		"name": "jeans"
-	},
-
-	{
-		"name": "raincoat"
-	}
-]
+{ "_id" : { "$oid" : "549385597069782a7e130000" }, "category_ids" : [ { "$oid" : "549385597069782a7e000000" }, { "$oid" : "549385597069782a7e0f0000" } ], "clothing_type" : "tshirt" }
+{ "_id" : { "$oid" : "5493855a7069782a7e140000" }, "clothing_type" : "shorts" }
+{ "_id" : { "$oid" : "5493855a7069782a7e150000" }, "clothing_type" : "jeans" }
+{ "_id" : { "$oid" : "5493855a7069782a7e160000" }, "clothing_type" : "tank top" }
+{ "_id" : { "$oid" : "5493855a7069782a7e170000" }, "clothing_type" : "sweater" }
+{ "_id" : { "$oid" : "5493855a7069782a7e180000" }, "clothing_type" : "boots" }
+{ "_id" : { "$oid" : "5493855a7069782a7e190000" }, "clothing_type" : "sandals" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1a0000" }, "clothing_type" : "long-sleeve" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1b0000" }, "clothing_type" : "turtleneck" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1c0000" }, "clothing_type" : "long johns" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1d0000" }, "clothing_type" : "three-forths sleeve" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1e0000" }, "clothing_type" : "undershirt" }
+{ "_id" : { "$oid" : "5493855a7069782a7e1f0000" }, "clothing_type" : "sweat pants" }
+{ "_id" : { "$oid" : "5493855a7069782a7e200000" }, "clothing_type" : "long john pants" }
+{ "_id" : { "$oid" : "5493855a7069782a7e210000" }, "clothing_type" : "skipants" }
+{ "_id" : { "$oid" : "5493855a7069782a7e220000" }, "clothing_type" : "cargo pants" }
+{ "_id" : { "$oid" : "5493855a7069782a7e230000" }, "clothing_type" : "capris" }
+{ "_id" : { "$oid" : "5493855a7069782a7e240000" }, "clothing_type" : "umbrella" }
+{ "_id" : { "$oid" : "5493855a7069782a7e250000" }, "clothing_type" : "scarf" }
+{ "_id" : { "$oid" : "5493855a7069782a7e260000" }, "clothing_type" : "snow gloves" }
+{ "_id" : { "$oid" : "5493855a7069782a7e270000" }, "clothing_type" : "leather gloves" }
+{ "_id" : { "$oid" : "5493855a7069782a7e280000" }, "clothing_type" : "fabric gloves" }
+{ "_id" : { "$oid" : "5493855a7069782a7e290000" }, "clothing_type" : "beanie" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2a0000" }, "clothing_type" : "skihat" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2b0000" }, "clothing_type" : "cossak" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2c0000" }, "clothing_type" : "bomber hat" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2d0000" }, "clothing_type" : "ball cap" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2e0000" }, "clothing_type" : "leather jacket" }
+{ "_id" : { "$oid" : "5493855a7069782a7e2f0000" }, "clothing_type" : "rain coat" }
+{ "_id" : { "$oid" : "5493855a7069782a7e300000" }, "clothing_type" : "jacket" }
+{ "_id" : { "$oid" : "5493855a7069782a7e310000" }, "clothing_type" : "sports coat" }
+{ "_id" : { "$oid" : "5493855a7069782a7e320000" }, "clothing_type" : "windbreaker" }
+{ "_id" : { "$oid" : "5493855a7069782a7e330000" }, "clothing_type" : "blazer" }
+{ "_id" : { "$oid" : "5493855a7069782a7e340000" }, "clothing_type" : "ski jacket" }
+{ "_id" : { "$oid" : "5493855a7069782a7e350000" }, "clothing_type" : "pancho" }
+{ "_id" : { "$oid" : "5493855a7069782a7e360000" }, "clothing_type" : "hoodie" }
+{ "_id" : { "$oid" : "5493855a7069782a7e370000" }, "clothing_type" : "tennis shoes" }
+{ "_id" : { "$oid" : "5493855a7069782a7e380000" }, "clothing_type" : "boat shoe" }
+{ "_id" : { "$oid" : "5493855a7069782a7e390000" }, "clothing_type" : "dress shoes" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3a0000" }, "clothing_type" : "rain boots" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3b0000" }, "clothing_type" : "barefoot" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3c0000" }, "clothing_type" : "slippers" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3d0000" }, "clothing_type" : "loafers" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3e0000" }, "clothing_type" : "swimsuit" }
+{ "_id" : { "$oid" : "5493855a7069782a7e3f0000" }, "clothing_type" : "sunglasses" }
