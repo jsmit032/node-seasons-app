@@ -12,4 +12,6 @@ var CategorySchema = new Schema({
 
 });
 
+CategorySchema.habtm('Clothing');
+
 module.exports = mongoose.model('Category', CategorySchema);

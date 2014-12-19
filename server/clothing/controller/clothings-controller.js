@@ -1,31 +1,54 @@
-var //Clothing = require('../models/clothing.js'),
+var Clothing = require('../../clothing/models/clothing.js'),
 	Category = require('../../category/models/category.js'),
 	url = require('url'),
 	mongoose = require('mongoose');
 
 function getClothing (request, response) {
 
-	console.log('Query: ' + request.url);
-
 	queryData = url.parse(request.url,true).query;
- 	
+	console.log(queryData);
+	
+ 	categoryObj = null;
  	if(queryData.category)
-	Category.find({name: queryData.category },function(error, clothing){
+	var query = Category.find({name: queryData.category });
+	
+	query.exec(function(error, cats){
 		if (error) console.log(error);
-		response.status(200).json(clothing);
+		console.log(cats);
+		Clothing.populate(cats, {path: 'clothings' }, function (err, cats2) {
+			if(err) console.log("bad stuff: " + err);
+			cats2.forEach(function(cat) {
+				console.log(cat.clothings);
+				cat.clothings.forEach(function(clothes) {
+					console.log(clothes.clothing_type);
+				})
+				response.status(200).json(cat.clothings);
+
+			});
+			// console.log(cats2.clothings);
+			// response.status(200).json(cats2);
+		});
+		//console.log("clothing: " + clothing);
+		
+	
 	});
+
+     
 }
 
-// function showClothing (request, response) {
+function showClothing (request, response) {
 
-// 	Clothing.findById({category: request.params.clothingId}, 
-// 		function(error, clothing){
-// 			Clothing.populate(clothing, {path: 'category'}, function (error, clothing) {
-// 				response.send(clothing);
-// 			});
-// 	});
+	queryData = url.parse(request.url,true).query;
+	console.log(queryData);
 
-// }
+	Clothing.findById({category: request.params.clothingId}, 
+		function(error, clothing){
+			Clothing.populate(clothing, {path: 'category'}, function (error, clothing) {
+				response.send(clothing);
+			});
+	});
+
+}
 
 function postClothing (request, response) {
 	console.log(request.body)

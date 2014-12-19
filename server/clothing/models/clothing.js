@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 var ClothingSchema = new Schema({
 
-	name: String,
+	clothing_type: String,
 	category: {
 		type: Schema.ObjectId,
 		ref: 'Category'
