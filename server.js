@@ -30,7 +30,8 @@ app.set('view engine', 'ejs');
 
 
 
-// wunderground api
+/////////// wunderground api ///////////////////////////////
+
 var apikey = "2f0b44146ceab5a4";
 var debug = false;
 var wunder = new WunderNodeClient(apikey, debug,  10, 'minute');
@@ -71,6 +72,8 @@ app.get('/receivezip', function(req, res){
     res.end(weatherReport);
   });
 });
+
+//////////////////////////////////////////////////////////
 
 require('./server/routes.js')(app);
 

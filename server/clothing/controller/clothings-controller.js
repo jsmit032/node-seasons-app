@@ -21,7 +21,6 @@ function postClothing (request, response) {
 
 }
 
-// GOT 204 ERROR 'NO CONTENT' after update
 function updateClothing (request, response) {
 
 	Clothing.findById(request.params.id,
@@ -43,7 +42,8 @@ function deleteClothing (request, response) {
 		function(error, data){
 			if (error) console.log(error);
 			response.status(202).json({ message: 'clothing successfully deleted!' });
-		});
+		}
+	);
 
 };
 
